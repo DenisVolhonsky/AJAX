@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('#task2').on('click', myTask2);
     $('#task3').on('click', myTask3);
     $('#task4').on('click', myTask4);
+    $('#task5').on('click', myTask5);
 
 });
 
@@ -17,7 +18,7 @@ function myTask1() {
             "num2": 9
         },
         function (data) {   //что с этим делать
-            console.log('Сумма чисел равна: '+ data);
+            console.log(data);
         }
     );
 }
@@ -35,7 +36,7 @@ function myTask2() {
             "year": 1984 //что послать
         },
         function (data) {   //что с этим делать
-            console.log('Ваш возраст: '+ data);
+            console.log(data);
         }
     );
 }
@@ -54,7 +55,7 @@ function myTask3() {
             "height": $('#height').val()
         },
         function (data) {   //что с этим делать
-            console.log('Ваш идеальный вес: '+ data);
+            console.log('Задача 3'+ data);
         }
     );
 }
@@ -66,10 +67,10 @@ function myTask4() {
         'a3.php', //куда послать
         {
             "sex": $('input[name=sex]:checked').val(),
-            "height": $('#hrange').val()
+            "height": $('#range').val()
         },
         function (data) {   //что с этим делать
-            console.log('(Задача 4)Ваш идеальный вес: '+ data);
+            console.log('(Задача 4)'+ data);
         }
     );
 }
@@ -81,16 +82,24 @@ function change() {
 // fio – поле ввода для имени и фамилии;
 // email – поле ввода для email адреса
 // phone – поле ввода для телефона
-
-
-
-
 // По нажатию кнопки передайте данные из полей ввода на сервер (mail.php) посредством POST (AJAX). Имена переменных – такие,
 // как указано в списке. Если все сделано верно,
 // то по адресу указанному в файле mail.php в переменной $to будет отправлено письмо, если нет – выведена ошибка.
 // Возвращаемый формат – строка.
 
 
-
+function myTask5() {
+    $.post(
+        'mail.php', //куда послать
+        {
+            "fio": $('#fio').val(),
+            "email": $('#email').val(),
+            "phone": $('#phone').val()
+        },
+        function (data) {   //что с этим делать
+            console.log(data);
+        }
+    );
+}
 
 
