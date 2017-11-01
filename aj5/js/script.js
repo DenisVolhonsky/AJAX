@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('button').on('click', f1);
-    $('#sign').on('click', f2);
+    $('#sign-load').on('click', f2);
     $('#sign-json').on('click', f3);
 
 
@@ -24,7 +24,7 @@ function f1() {
 
 function f2() {
 
-        outSign = $('#sign option:selected').val();
+        outSign = $('#sign-load option:selected').val();
 
         if(outSign==='oven'){
             $('#date-out').load('z2.html #date').css({'color':'#592434'});
@@ -50,7 +50,7 @@ function f3() {
     $.getJSON('sign.json', function (data) {
 
         for(var key in data) {
-            if(outSignJson==key) {
+            if(outSignJson == key) {
                 nameOut = '<i>Знак зодиака: </i><b>'+ data[key].name +'</b>';
                 dateOut = '<i>Период: </i><b>'+ data[key].date +'</b>';
                 historyOut = '<i>Описание: </i>'+ data[key].history;
@@ -58,7 +58,7 @@ function f3() {
         }
 
         $('#name').html(nameOut);
-        $('#date').html(dateOut);
+        $('#znak-date').html(dateOut);
         $('#history').html(historyOut);
     });
 }
