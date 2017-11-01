@@ -1,0 +1,10 @@
+.items {
+    width: 500px;
+    border: 2px solid red;
+    margin: 5px;
+    padding: 10px;
+    float: left;
+}
+.items:hover {
+    box-shadow: 6px 7px 16px 0px #888888;
+}
