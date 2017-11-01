@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 .items {
     width: 500px;
     border: 2px solid red;
@@ -7,4 +11,12 @@
 }
 .items:hover {
     box-shadow: 6px 7px 16px 0px #888888;
+}
+.clearfix {
+    clear: both;
+}
+#zodiac-out, #date-out {
+    width: 500px;
+    margin: 0 5px;
+    padding: 0 10px;
 }
