@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('button').on('click', f1);
-    $('select').on('click', f2);
+    $('#sign').on('click', f2);
+    $('#sign-json').on('click', f3);
 
 
 });
@@ -38,5 +39,27 @@ function f2() {
             $('#zodiac-out').load('z3.html #description').css({'color':'darkgoldenrod', 'font-weight':'bold'});
         }
 
+}
+
+function f3() {
+    outSignJson = $('#sign-json option:selected').val();
+    nameOut = '';
+    dateOut = '';
+    historyOut = '';
+
+    $.getJSON('sign.json', function (data) {
+
+        for(var key in data) {
+            if(outSignJson==key) {
+                nameOut = '<i>Знак зодиака: </i><b>'+ data[key].name +'</b>';
+                dateOut = '<i>Период: </i><b>'+ data[key].date +'</b>';
+                historyOut = '<i>Описание: </i>'+ data[key].history;
+            }
+        }
+
+        $('#name').html(nameOut);
+        $('#date').html(dateOut);
+        $('#history').html(historyOut);
+    });
 }
 

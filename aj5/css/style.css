@@ -20,3 +20,8 @@
     margin: 0 5px;
     padding: 0 10px;
 }
+#name, #date, #history {
+    width: 500px;
+    margin: 10px;
+    /*padding: 10px;*/
+}
